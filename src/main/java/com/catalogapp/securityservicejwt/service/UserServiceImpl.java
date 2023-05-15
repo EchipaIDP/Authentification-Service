@@ -3,7 +3,6 @@ package com.catalogapp.securityservicejwt.service;
 import com.catalogapp.securityservicejwt.controller.request.SignupRequest;
 import com.catalogapp.securityservicejwt.domain.User;
 import com.catalogapp.securityservicejwt.domain.enums.RoleEnum;
-import com.catalogapp.securityservicejwt.respository.RoleRepository;
 import com.catalogapp.securityservicejwt.respository.UserRepository;
 import com.catalogapp.securityservicejwt.services.UserDetailsImpl;
 import com.catalogapp.securityservicejwt.validation.Validator;
@@ -22,15 +21,13 @@ public class UserServiceImpl implements UserService {
 
     private final Validator userValidator;
 
-    private final RoleRepository roleRepository;
-
     private final PasswordEncoder encoder;
 
     @Override
     public User saveUser(final SignupRequest userDto) {
         userValidator.validate(userDto);
         var password = encoder.encode(userDto.getPassword());
-        var pacientRole = roleRepository.findOneByDescription(RoleEnum.SITE_USER.getDescription());
+        var pacientRole = RoleEnum.SITE_USER.getDescription();
         var user = new User(userDto.getUsername(),userDto.getEmail(),
                 password,userDto.getFirstName(), userDto.getLastName(),pacientRole,new Date(),new Date());
         return userRepository.save(user);

@@ -1,6 +1,5 @@
 package com.catalogapp.securityservicejwt.jwt;
 
-import com.catalogapp.securityservicejwt.domain.Role;
 import com.google.gson.Gson;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,7 +13,7 @@ public class JwtSubject {
 
     private String username;
 
-    private Role role;
+    private String role;
 
     @Override
     public String toString() {

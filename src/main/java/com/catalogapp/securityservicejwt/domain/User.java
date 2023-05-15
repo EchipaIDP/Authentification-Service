@@ -21,8 +21,7 @@ public class User {
     private final String password;
     private final String firstName;
     private final String lastName;
-    @DBRef
-    private final Role role;
+    private final String role;
     private final Date createdDate;
     private final Date lastUpdate;
 
