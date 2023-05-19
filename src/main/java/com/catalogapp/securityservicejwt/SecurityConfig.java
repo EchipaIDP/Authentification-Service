@@ -99,7 +99,7 @@ public class SecurityConfig {
         corsConfig.addAllowedMethod("PATCH");
         corsConfig.addAllowedMethod("POST");
         corsConfig.addAllowedMethod("OPTIONS");
-        corsConfig.setAllowedOrigins(Arrays.asList("*"));
+        corsConfig.setAllowedOrigins(Arrays.asList("https://idproj.me"));
         corsConfig.setAllowedHeaders(Arrays.asList("Authorization", "Requestor-Type"));
         corsConfig.setExposedHeaders(Arrays.asList("X-Get-Header"));
         UrlBasedCorsConfigurationSource source =
