@@ -46,7 +46,7 @@ public class AuthController {
 
         RestTemplate restTemplate = new RestTemplate();
 
-        String url = "http://localhost:8080/login";
+        String url = "https://bookservice.idproj.me/login";
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
 
