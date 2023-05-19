@@ -20,10 +20,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
-@RequestMapping("/api/auth/")
 @RestController
-@RequiredArgsConstructor
 @CrossOrigin
+@RequestMapping("/api/auth/")
+@RequiredArgsConstructor
 public class AuthController {
 
     private final AuthenticationManager authenticationManager;
